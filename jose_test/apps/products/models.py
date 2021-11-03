@@ -31,7 +31,7 @@ class Product(models.Model):
     status = models.CharField(max_length = 50, choices=TITLES_STATES)
     price = models.DecimalField(max_digits = 6, decimal_places = 2)
     stock = models.IntegerField()
-    marca = models.ManyToManyField(Marca)
+    marca = models.ForeignKey(Marca, null=True, blank=True, on_delete=models.CASCADE)
     #store = models.ForeignKey(Store, null=True, blank=True, on_delete=models.CASCADE)
     #image = models.ImageField(upload_to='products', null = True)
     #categories = models.ManyToManyField(Category, null = True, blank = True)

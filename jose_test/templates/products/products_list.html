@@ -23,7 +23,7 @@
             <td>{{ product.status }}</td>
             <td>{{ product.price }}</td>
             <td>{{ product.stock }}</td>
-            <td>{{ product.marca.name }}</td>
+            <td>{{ product.name }}</td>
             <td>
                 <a class="btn btn-primary" href="{% url 'products:products_editar' product.id %}">Editar</a>
                 <a class="btn btn-danger" href="{% url 'products:products_eliminar' product.id %}">Eliminar</a>

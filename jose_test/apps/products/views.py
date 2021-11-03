@@ -57,17 +57,17 @@ class ProductUpdate(UpdateView):
         if 'form' not in context:
             context['form'] = self.form_class()
         if 'form2' not in context:
-            context['form2'] = self.second_form_class(instance=store)
+            context['form2'] = self.second_form_class(instance=marca)
         context['id'] = pk
         return context
     
     def post(self, request, *args, **kwargs):
         self.object = self.get_object
         id_store = kwargs['pk']
-        stores = self.model.objects.get(id=id_stores)
-        store = self.second_model.objects.get(id=store.name_id)
-        form = self.form_class(request.POST, instance=store)
-        form2 = self.second_form_class(request.POST, instance=product)
+        stores = self.model.objects.get(id=id_store)
+        stor = self.second_model.objects.get(id=stores.marca_id)
+        form = self.form_class(request.POST, instance=stores)
+        form2 = self.second_form_class(request.POST, instance=stor)
         if form.is_valid() and form2.is_valid():
             form.save()
             form2.save()
