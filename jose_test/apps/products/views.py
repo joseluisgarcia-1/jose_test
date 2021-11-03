@@ -49,11 +49,11 @@ class ProductUpdate(UpdateView):
     second_form_class = MarcaForm
     success_url = reverse_lazy('products:products_listar')
 
-"""    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs):
         context = super(ProductUpdate, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk', 0)
-        stores = self.model.objects.get(id=pk)
-        store = self.second_model.objects.get(id=stores.store_id)
+        produc = self.model.objects.get(id=pk)
+        marca = self.second_model.objects.get(id=produc.marca_id)
         if 'form' not in context:
             context['form'] = self.form_class()
         if 'form2' not in context:
@@ -73,7 +73,7 @@ class ProductUpdate(UpdateView):
             form2.save()
             return HttpResponseRedirect(self.get_success_url())
         else:
-            return HttpResponseRedirect(self.get_success_url())"""
+            return HttpResponseRedirect(self.get_success_url())
 
 class ProductDelete(DeleteView):
     model = Product

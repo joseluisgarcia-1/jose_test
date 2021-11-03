@@ -35,11 +35,11 @@ class MarcaForm(forms.ModelForm):
         model = Marca
         fields = [
             'name', 
-            'store'
+            'store',
         ]
         labels = {
             'name': 'Nombre de la marca', 
-            'store': 'Nombre de la tienda'
+            'store': 'Nombre de la tienda',
         }
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
