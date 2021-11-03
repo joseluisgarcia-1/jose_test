@@ -26,10 +26,10 @@ class StoreForm(forms.ModelForm):
 			'name_commerce': 'Nombre comercial',
 			'address': 'Dirección',
 			'email': 'Correo electrónico',
-			'cellphone': 'Telefono',
+			'cellphone': 'Teléfono',
 			'website': 'Sito web',
 			'country': 'País',
-			'state': 'Estado',
+			'state': 'Departamento',
 			'city': 'Ciudad',
 		}
 		widgets = {
