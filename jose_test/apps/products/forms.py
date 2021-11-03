@@ -14,12 +14,12 @@ class ProductForm(forms.ModelForm):
             'marca',
         ]
         labels = {
-            'name': "Usuario creador",
-            'description': "Nit",
-            'status': "Nombre de la empresa",
-            'price': 'Nombre comercial de la empresa',
-            'stock': "Dirección",
-            'marca': 'Telefono',
+            'name': "Nombre",
+            'description': "Descripción",
+            'status': "Estado",
+            'price': "Precio",
+            'stock': "Cantidad",
+            'marca': 'Marca',
         }
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control'}),
