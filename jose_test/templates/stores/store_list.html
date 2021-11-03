@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Empresa cliente</td>
+			<td>Contacto empresa</td>
+			<td>Nombre store de negocio</td>
+			<td>Monto de la store</td>
+			<td>Estado de la store</td>
+			<td>Acciones</td>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for store in object_list %}
+		<tr>
+			<td>{{ store.name_company }}</td>
+			<td>{{ store.name_company }}</td>
+			<td>{{ store.name_company }}</td>
+			<td>{{ store.name_company }}</td>
+			<td>{{ store.name_company }}</td>
+			<td>{{ store.name_company }}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'store:store_editar' store.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'store:store_eliminar' store.id %}">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de tiendas</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

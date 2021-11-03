@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Usuario creador</td>
+            <td>Nit</td>
+            <td>Nombre de la empresa</td>
+            <td>Nombre comercial de la empresa</td>
+            <td>Dirección</td>
+            <td>Teléfono</td>
+            <td>Correo electrónico</td>
+            <td>Sitio web</td>
+            <td>País</td>
+            <td>Departamento</td>
+            <td>Ciudad</td>
+            <td>Usuarios que pertenecen a la empresa</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %}
+        {% for product in object_list %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.name }}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'products:product_editar' persona.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'products:product_eliminar' persona.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros de products</h1>
+     {% endif %}
+    </tbody>
+</table>
+{% endblock %}
