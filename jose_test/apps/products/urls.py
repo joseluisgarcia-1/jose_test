@@ -1,7 +1,7 @@
 from django.contrib import admin
 from apps.products.views import index_products, ProductList, ProductCreate, ProductUpdate, ProductDelete
 from django.urls import path, re_path, include
-
+app_name = 'products'
 urlpatterns = [
     path('', index_products, name='inicio'),
     path('products/listar', ProductList.as_view(), name='products_listar'),
